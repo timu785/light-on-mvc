@@ -27,17 +27,6 @@ body {
     border-radius: min(1vh, 1vw);
     background-color: rgb(150, 150, 225);
 }
-.lamp-on::before {
-    content: "";
-    position: relative;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(150, 150, 225);
-    filter: blur(min(10vh, 10vw));
-    opacity: 1;
-    z-index: 99;
-    pointer-events: none;
-}
 .lamp-off {
     border-radius: min(1vh, 1vw);
     background-color: rgb(50, 50, 75);

@@ -8,7 +8,7 @@ export class Controller {
         new View(model.getLampStateArray(), lampBoardElement);
 
         document.addEventListener("myevent", (event) => {
-            model.setXthLampState(event.detail);
+            model.setXthLampStateWithNeighbors(event.detail);
             new View(model.getLampStateArray(), lampBoardElement);
         });
     }
