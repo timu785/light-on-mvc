@@ -1,7 +1,12 @@
 export class Model {
-    #lampStateArray = new Array(16).fill(false);
+    #size;
+    #lampStateArray;
 
     constructor(){
+        this.#size = Math.floor(Math.random() * (16 - 2 + 1)) + 2;
+        console.log(this.#size);
+        this.#lampStateArray = new Array(this.#size * this.#size).fill(false);
+
         for (let i = 0; i < this.#lampStateArray.length; i++) {
             this.#lampStateArray[i] = Math.random() < 0.5 ? false : true;
         }
@@ -12,7 +17,8 @@ export class Model {
     }
 
     setXthLampStateWithNeighbors(index){
-        let n = this.#lampStateArray.length;
+        let n = Math.sqrt(this.#lampStateArray.length);
+        console.log(n);
 
         // ha a lámpa a bal felső sarok, vagyis index = 0
         if(index == 0)

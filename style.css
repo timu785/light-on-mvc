@@ -12,6 +12,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    background-image: url(wp.jpg);
+    background-size: cover;
+    background-position: center;
+
 }
 
 #lamp-board {
@@ -20,14 +25,34 @@ body {
     display: grid;
     gap: min(1vh, 1vw);
     padding: min(1vh, 1vw);
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.lamp-on, .lamp-off {
+    border-radius: min(1vh, 1vw);
+    position: relative;
 }
 .lamp-on {
-    border-radius: min(1vh, 1vw);
-    background-color: rgb(150, 150, 225);
+    background-color: rgb(175, 150, 225);
+}
+.lamp-on::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: rgb(175, 150, 225);
+    transform: translate(-50%, -50%);
+    filter: blur(min(15vh, 15vw));
+    opacity: 1;
+    pointer-events: none;
+    z-index: 23;
 }
 .lamp-off {
-    border-radius: min(1vh, 1vw);
-    background-color: rgb(50, 50, 75);
+    background-color: rgb(58.33, 50, 75);
+    z-index: 22;
 }
+
+
+
+
